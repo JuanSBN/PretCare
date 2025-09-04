@@ -1383,3 +1383,40 @@ body.modo-oscuro .beneficio p {
     font-size: 2rem;
   }
 }
+
+@media (max-width: 768px) {
+  /* ... (código existente) ... */
+  
+  /* Añade estas reglas para el header en móvil */
+  header {
+    padding: 1rem 5%;
+  }
+  
+  .nav-buttons {
+    position: absolute;
+    right: 70px; /* Espacio para el toggle móvil */
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .menu.active ~ .nav-buttons {
+    display: none; /* Ocultar botones cuando el menú está activo */
+  }
+  
+  /* Asegurar que el toggle móvil tenga suficiente espacio */
+  .mobile-toggle {
+    z-index: 1001;
+    position: relative;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Ajustes adicionales para móviles más pequeños */
+  .nav-buttons {
+    right: 60px;
+  }
+  
+  .switch {
+    transform: scale(0.8); /* Reducir tamaño del switch en móviles pequeños */
+  }
+}

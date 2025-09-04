@@ -16,8 +16,27 @@ window.addEventListener('scroll', () => {
 // Menú móvil
 menuToggle.addEventListener('click', () => {
   menu.classList.toggle('active');
-  menuToggle.querySelector('i').classList.toggle('fa-bars');
-  menuToggle.querySelector('i').classList.toggle('fa-times');
+  const icon = menuToggle.querySelector('i');
+  
+  // Cambiar icono
+  if (menu.classList.contains('active')) {
+    icon.classList.remove('fa-bars');
+    icon.classList.add('fa-times');
+    // Ocultar botones de navegación cuando el menú está abierto
+    document.querySelector('.nav-buttons').style.display = 'none';
+  } else {
+    icon.classList.remove('fa-times');
+    icon.classList.add('fa-bars');
+    // Mostrar botones de navegación cuando el menú está cerrado
+    document.querySelector('.nav-buttons').style.display = 'flex';
+  }
+});
+
+// Asegurarse de que los botones de navegación se muestren al cargar la página
+window.addEventListener('load', () => {
+  if (window.innerWidth <= 768) {
+    document.querySelector('.nav-buttons').style.display = 'flex';
+  }
 });
 
 // Cerrar menú al hacer clic en un enlace
