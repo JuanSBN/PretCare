@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Finalizar Compra - PetCare AI</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="stylepago.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- ================= HEADER SIMPLIFICADO ================= -->
+  <header id="header">
+    <div class="logo">
+      <a href="index.html">
+        <i class="fas fa-paw"></i> PetCare AI
+      </a>
+    </div>
+    
+    <div class="proceso-pago">
+      <div class="paso activo">1. Carrito</div>
+      <div class="paso activo">2. Envío</div>
+      <div class="paso">3. Pago</div>
+      <div class="paso">4. Confirmación</div>
+    </div>
+    
+    <!-- Toggle de modo oscuro DENTRO del header -->
+    <div class="nav-buttons">
+      <label class="switch">
+        <input type="checkbox" id="modoOscuroToggle">
+        <span class="slider"></span>
+      </label>
+    </div>
+  </header>
+
+  <!-- ================= SECCIÓN DE PAGO ================= -->
+  <main class="contenedor-pago">
+    <div class="resumen-compra">
+      <h2>Tu Pedido</h2>
+      <div class="producto-resumen">
+        <img src="img/dispositivo.png" alt="PetCare Hub">
+        <div class="info-producto">
+          <h3>PetCare Hub</h3>
+          <p>Dispositivo Inteligente para Mascotas</p>
+          <span class="precio">$149.99</span>
+        </div>
+        <div class="cantidad">1</div>
+      </div>
+      
+      <div class="resumen-total">
+        <div class="fila-total">
+          <span>Subtotal:</span>
+          <span>$149.99</span>
+        </div>
+        <div class="fila-total">
+          <span>Envío:</span>
+          <span>$9.99</span>
+        </div>
+        <div class="fila-total total">
+          <span>Total:</span>
+          <span>$159.98</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="formulario-pago">
+      <h2>Información de Envío</h2>
+      <form id="formularioEnvio">
+        <div class="form-grupo">
+          <label for="nombre">Nombre completo *</label>
+          <input type="text" id="nombre" required>
+        </div>
+        
+        <div class="form-grupo">
+          <label for="email">Correo electrónico *</label>
+          <input type="email" id="email" required>
+        </div>
+        
+        <div class="form-grupo">
+          <label for="telefono">Teléfono *</label>
+          <input type="tel" id="telefono" required>
+        </div>
+        
+        <div class="form-grupo">
+          <label for="direccion">Dirección *</label>
+          <input type="text" id="direccion" required>
+        </div>
+        
+        <div class="form-doble">
+          <div class="form-grupo">
+            <label for="ciudad">Ciudad *</label>
+            <input type="text" id="ciudad" required>
+          </div>
+          
+          <div class="form-grupo">
+            <label for="codigoPostal">Código Postal *</label>
+            <input type="text" id="codigoPostal" required>
+          </div>
+        </div>
+        
+        <div class="form-grupo">
+          <label for="pais">País *</label>
+          <select id="pais" required>
+            <option value="">Seleccionar país</option>
+            <option value="mx">México</option>
+            <option value="es">España</option>
+            <option value="ar">Argentina</option>
+            <option value="co">Colombia</option>
+            <option value="cl">Chile</option>
+          </select>
+        </div>
+        
+        <div class="form-grupo">
+          <label for="instrucciones">Instrucciones de entrega (opcional)</label>
+          <textarea id="instrucciones" rows="3"></textarea>
+        </div>
+        
+        <button type="submit" class="btn-continuar">Continuar al Pago</button>
+      </form>
+    </div>
+  </main>
+
+  <!-- ================= FOOTER SIMPLIFICADO ================= -->
+  <footer class="footer-pago">
+    <div class="copyright">
+      <p>© 2025 PetCare AI. Todos los derechos reservados.</p>
+      <div class="seguridad">
+        <i class="fas fa-lock"></i>
+        <span>Conexión segura SSL</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scriptpago.js"></script>
+</body>
+</html>

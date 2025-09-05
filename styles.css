@@ -824,8 +824,8 @@ body.modo-oscuro footer {
   .menu {
     position: fixed;
     top: 0;
-    right: -100%;
-    width: 70%;
+    left: -100%;  /* ← Cambiado de right a left */
+    width: 100%;   /* ← Cambiado a 100% para ocupar toda la pantalla */
     height: 100vh;
     background: var(--card-light);
     flex-direction: column;
@@ -833,7 +833,7 @@ body.modo-oscuro footer {
     justify-content: center;
     transition: var(--transition);
     z-index: 999;
-    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
+    box-shadow: none; /* ← Eliminada la sombra lateral */
   }
   
   body.modo-oscuro .menu {
@@ -841,7 +841,7 @@ body.modo-oscuro footer {
   }
   
   .menu.active {
-    right: 0;
+    left: 0;  /* ← Cambiado de right a left */
   }
   
   .menu li {
@@ -851,8 +851,23 @@ body.modo-oscuro footer {
   .mobile-toggle {
     display: block;
     z-index: 1000;
+    position: relative;
   }
   
+  /* Botón de modo oscuro en móvil */
+  .nav-buttons {
+    position: absolute;
+    right: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1001;
+  }
+  
+  .menu.active ~ .nav-buttons {
+    display: none;
+  }
+  
+  /* Resto de tus estilos para móvil... */
   .hero-titulo {
     font-size: 2.5rem;
   }
@@ -882,6 +897,7 @@ body.modo-oscuro footer {
     font-size: 1.2rem;
   }
 }
+ 
 
 @media (max-width: 576px) {
   .hero-titulo {
