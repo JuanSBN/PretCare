@@ -363,3 +363,190 @@ body.modo-oscuro .footer-pago {
     top: 1rem;
   }
 }
+
+/* ===== ESTILOS ADICIONALES PARA PAGO CON TARJETA ===== */
+.info-envio {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 10px;
+  border-left: 4px solid var(--primary);
+}
+
+body.modo-oscuro .info-envio {
+  background: #2a2a2a;
+}
+
+.info-envio h3 {
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+.info-envio p {
+  margin: 0.3rem 0;
+  line-height: 1.4;
+}
+
+.btn-pagar {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 1.5rem 2.5rem;
+  font-size: 1.2rem;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: var(--transition);
+  width: 100%;
+  margin: 1.5rem 0;
+}
+
+.btn-pagar:hover {
+  background: var(--primary-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(255, 111, 97, 0.3);
+}
+
+.btn-pagar:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.input-tarjeta {
+  position: relative;
+}
+
+.iconos-tarjetas {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 5px;
+}
+
+.iconos-tarjetas i {
+  font-size: 1.2rem;
+  opacity: 0.6;
+}
+
+.cvv-info {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: help;
+  color: #666;
+}
+
+.proteccion-pago {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 1rem 0;
+  padding: 1rem;
+  background: #e8f5e8;
+  border-radius: 8px;
+  color: #2e7d32;
+}
+
+body.modo-oscuro .proteccion-pago {
+  background: #1b5e20;
+  color: #e8f5e8;
+}
+
+.metodos-alternativos {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #eee;
+}
+
+body.modo-oscuro .metodos-alternativos {
+  border-top: 1px solid #444;
+}
+
+.botones-alternativos {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.btn-paypal, .btn-google-pay {
+  flex: 1;
+  padding: 1rem;
+  border: 2px solid #0070ba;
+  border-radius: 8px;
+  background: white;
+  color: #0070ba;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 600;
+}
+
+.btn-google-pay {
+  border-color: #4285f4;
+  color: #4285f4;
+}
+
+.btn-paypal:hover {
+  background: #0070ba;
+  color: white;
+}
+
+.btn-google-pay:hover {
+  background: #4285f4;
+  color: white;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin: 1rem 0;
+}
+
+.checkmark {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  margin-right: 10px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+input[type="checkbox"]:checked + .checkmark {
+  background: #ff6f61;
+  border-color: #ff6f61;
+}
+
+input[type="checkbox"]:checked + .checkmark::after {
+  content: '✓';
+  position: absolute;
+  color: white;
+  font-size: 14px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Responsive para botones alternativos */
+@media (max-width: 768px) {
+  .botones-alternativos {
+    flex-direction: column;
+  }
+  
+  .btn-paypal, .btn-google-pay {
+    width: 100%;
+  }
+}

@@ -113,7 +113,7 @@ pet.addEventListener('click', () => {
     clearTimeout(petTimeout);
     petTimeout = setTimeout(() => {
       petImage.style.transform = '';
-      // petImage.src = modoOscuroToggle.checked ? 'img/mascota-sleep.png' : 'img/mascota-awake.png';
+      petImage.src = modoOscuroToggle.checked ? 'img/mascota-sleep.png' : 'img/mascota-awake.png';
       isHappy = false;
     }, 2000);
   }
@@ -231,8 +231,8 @@ formContacto.addEventListener('submit', function(e) {
 const ctaButton = document.querySelector('.cta-boton');
 
 ctaButton.addEventListener('click', () => {
-  // Scroll suave a la sección de contacto
-  document.querySelector('#contacto').scrollIntoView({
+  // Scroll suave a la sección de producto
+  document.querySelector('#producto').scrollIntoView({
     behavior: 'smooth'
   });
 });

@@ -19,10 +19,10 @@
     </div>
     
     <div class="proceso-pago">
-      <div class="paso activo">1. Carrito</div>
-      <div class="paso activo">2. Envío</div>
-      <div class="paso">3. Pago</div>
-      <div class="paso">4. Confirmación</div>
+      <div class="paso" id="paso-carrito">1. Carrito</div>
+      <div class="paso activo" id="paso-envio">2. Envío</div>
+      <div class="paso" id="paso-pago">3. Pago</div>
+      <div class="paso" id="paso-confirmacion">4. Confirmación</div>
     </div>
     
     <!-- Toggle de modo oscuro DENTRO del header -->
@@ -62,9 +62,18 @@
           <span>$159.98</span>
         </div>
       </div>
+
+      <!-- Sección de información de envío (se mostrará después de completar el envío) -->
+      <div class="info-envio" id="info-envio" style="display: none;">
+        <h3>Dirección de Envío</h3>
+        <div id="direccion-resumen">
+          <!-- Aquí se mostrarán los datos de envío -->
+        </div>
+      </div>
     </div>
 
-    <div class="formulario-pago">
+    <!-- FORMULARIO DE ENVÍO -->
+    <div class="formulario-pago" id="formulario-envio">
       <h2>Información de Envío</h2>
       <form id="formularioEnvio">
         <div class="form-grupo">
@@ -117,6 +126,77 @@
         </div>
         
         <button type="submit" class="btn-continuar">Continuar al Pago</button>
+      </form>
+    </div>
+
+    <!-- FORMULARIO DE TARJETA (oculto inicialmente) -->
+    <div class="formulario-pago" id="formulario-tarjeta" style="display: none;">
+      <h2>Información de Pago</h2>
+      <form id="formularioTarjeta">
+        <div class="form-grupo">
+          <label for="titular">Titular de la Tarjeta *</label>
+          <input type="text" id="titular" required placeholder="Como aparece en la tarjeta">
+        </div>
+        
+        <div class="form-grupo">
+          <label for="numeroTarjeta">Número de Tarjeta *</label>
+          <div class="input-tarjeta">
+            <input type="text" id="numeroTarjeta" required placeholder="1234 5678 9012 3456" maxlength="19">
+            <div class="iconos-tarjetas">
+              <i class="fab fa-cc-visa" title="Visa"></i>
+              <i class="fab fa-cc-mastercard" title="Mastercard"></i>
+              <i class="fab fa-cc-amex" title="American Express"></i>
+            </div>
+          </div>
+        </div>
+        
+        <div class="form-doble">
+          <div class="form-grupo">
+            <label for="fechaVencimiento">Fecha de Vencimiento *</label>
+            <input type="text" id="fechaVencimiento" required placeholder="MM/AA" maxlength="5">
+          </div>
+          
+          <div class="form-grupo">
+            <label for="cvv">CVV *</label>
+            <input type="text" id="cvv" required placeholder="123" maxlength="4">
+            <span class="cvv-info" title="Código de seguridad de 3 o 4 dígitos">ⓘ</span>
+          </div>
+        </div>
+        
+        <div class="form-grupo">
+          <label for="tipoTarjeta">Tipo de Tarjeta *</label>
+          <select id="tipoTarjeta" required>
+            <option value="">Seleccionar tipo</option>
+            <option value="visa">Visa</option>
+            <option value="mastercard">Mastercard</option>
+            <option value="amex">American Express</option>
+            <option value="other">Otra</option>
+          </select>
+        </div>
+        
+        <div class="form-grupo">
+          <label class="checkbox-label">
+            <input type="checkbox" id="guardarTarjeta">
+            <span class="checkmark"></span>
+            Guardar esta tarjeta para futuras compras
+          </label>
+        </div>
+        
+        <button type="submit" class="btn-pagar">Pagar $159.98</button>
+        
+        <div class="metodos-alternativos">
+          <p>¿Prefieres otro método?</p>
+          <div class="botones-alternativos">
+            <button type="button" class="btn-paypal">
+              <i class="fab fa-paypal"></i>
+              Pagar con PayPal
+            </button>
+            <button type="button" class="btn-google-pay">
+              <i class="fab fa-google"></i>
+              Google Pay
+            </button>
+          </div>
+        </div>
       </form>
     </div>
   </main>
